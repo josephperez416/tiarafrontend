@@ -1,1 +1,4 @@
-README
+cd into the TiaraFront folder
+Download Node.js
+https://nodejs.org/en/download/package-manager
+on command line do "npm install"
