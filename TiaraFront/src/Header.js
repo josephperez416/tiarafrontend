@@ -1,34 +1,52 @@
 import React from 'react';
-import './Header.css';
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import { styled } from '@mui/material/styles';
 
-const Header = () => {
-    return (
-        <header className="header">
-            <div className="header-menu">
-                <div className="logo"> Mi Tiara</div>  
-                <div className="auth-buttons">
-                    <button>Login / Sign Up</button>
-                    <button>List Your Business</button>
-                </div>           
-            </div>
-            <div className = "header-main">
-                <div className = "search-bar">
-                    <input type = "text" placeholder = "What are you looking for?" />
-                    <input type = "text" placeholder = "Where?" />
-                    <input type = "text" placeholder = "00/00/0000" />
-                    <button className = "search-button">Search</button>
-                </div>
-            
-                <div className = "categories">
-                    <button>Venue</button>
-                    <button>Entertainment</button>
-                    <button>Catering</button>
-                    <button>Decorations</button>
-                    <button>Photo and Video</button>
-                </div>  
-            </div>         
-        </header>
-    );
-};
+const CustomAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: '#932F6D',
+}));
 
-export default Header;
+const Title = styled('div')(({ theme }) => ({
+  flexGrow: 1,
+  display: 'flex',
+  alignItems: 'center',
+}));
+
+const Logo = styled('img')(({ theme }) => ({
+  marginRight: theme.spacing(2),
+  height: '45px',
+  width: 'auto',
+  filter: 'grayscale(1) brightness(4)',
+}));
+
+const Buttons = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+}));
+
+
+export default function Header() {
+  return (
+    <CustomAppBar position="static">
+      <Toolbar>
+        <Title>
+        <Logo src="\Tiara_logo.png" alt="Mi Tiara Logo" />
+        </Title>
+        <Buttons>
+          <IconButton edge="end" sx={{ color: '#fff', display: 'flex', alignItems: 'center'}} aria-label="login-signup">
+            <AccountCircleIcon sx={{marginRight: 1}}/>
+            <Typography variant="body1" fontSize={'13px'}>Login / Sign Up</Typography>
+          </IconButton>
+          <IconButton edge="end" sx={{color: '#fff', display: 'flex', alignItems: 'center', marginLeft: 4}} aria-label="list-business">
+            <Typography variant="body1" fontSize={'13px'}>List Business</Typography>
+          </IconButton>
+          <IconButton edge="end" sx={{ color: '#fff', marginLeft:4 }} aria-label="shopping-bag">
+            <ShoppingBagIcon />
+          </IconButton>
+        </Buttons>
+      </Toolbar>
+    </CustomAppBar>
+  );
+}
