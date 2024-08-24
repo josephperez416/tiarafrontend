@@ -2,6 +2,8 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
+    let date = new Date();
+    let year = date.getYear() + 1900;
     return (
         <footer className = "footer">
             <div className = "footer-top">
@@ -40,7 +42,7 @@ const Footer = () => {
             </div>
             
             <div className = "footer-bottom">
-                <p>© 2024 MiTiara</p>
+                <p>© {year} MiTiara</p>
             </div>
         </footer>
     );
