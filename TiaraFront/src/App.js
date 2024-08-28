@@ -1,33 +1,38 @@
-import React, { Component } from "react";
-import { Route, NavLink, Routes, HashRouter } from "react-router-dom";
-import Home from "./Home";
-import Header from "./Header";
-import Footer from "./Footer";
-import {styled} from '@mui/material/styles';
+import { createBrowserRouter, createRoutesFromElements, Link, Route, RouterProvider, Outlet } from "react-router-dom";
+import Main from "./pages/Main";
+import Login from "./pages/Login";
+import SingleServiceDetails from "./pages/singleServiceDetails";
+import ErrorPage from "./pages/ErrorPage";
 
+export default function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+    <>
+      <Route path='/' element={<Main />} errorElement={<ErrorPage />}>
+          <Route index element={<div><h2>Main</h2></div>} />
+          <Route path='test' element={<div><h2>Test</h2></div>} />
+      </Route>
+      <Route path='/login' element={<Login />} />
+      <Route path='/details' element={<SingleServiceDetails />}/>
+      <Route path='/signup' element={<TestPage />}>
+          <Route index element={<div><h2>SignUp</h2></div>} />
+          <Route path='test' element={<div><h2>Test</h2></div>} />
+      </Route>
+    </>
+    )
+  );
 
-const PageContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  minHeight: '100vh',  
-});
-
-const ContentWrapper = styled('div')({
-  flexGrow: 1,  
-});
-
-function App() {
   return (
-      <HashRouter>
-        <PageContainer>
-        <Header/>
-        <ContentWrapper>
-          {/* Future content goes here */}
-        </ContentWrapper>
-        <Footer/>
-      </PageContainer>  
-      </HashRouter>
+    <RouterProvider router={router} />
   );
 }
 
-export default App;
+function TestPage() {
+  return (
+    <div>
+      <h2>TestPage</h2>
+      <Link to="/signup/test">Test</Link>
+      <Outlet /> {/* This is where the signup route will be rendered */}
+    </div>
+  );
+}

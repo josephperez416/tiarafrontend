@@ -3,6 +3,7 @@ import { AppBar, Toolbar, IconButton, Typography, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import { styled } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: '#932F6D',
@@ -28,6 +29,13 @@ const Buttons = styled('div')(({ theme }) => ({
 
 
 export default function Header() {
+
+  const navigate = useNavigate();
+
+  const loginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <CustomAppBar position="static">
       <Toolbar>
@@ -35,7 +43,8 @@ export default function Header() {
         <Logo src="\Tiara_logo.png" alt="Mi Tiara Logo" />
         </Title>
         <Buttons>
-          <IconButton edge="end" sx={{ color: '#fff', display: 'flex', alignItems: 'center'}} aria-label="login-signup">
+          <IconButton edge="end" sx={{ color: '#fff', display: 'flex', alignItems: 'center'}} aria-label="login-signup"
+            onClick={loginClick}>
             <AccountCircleIcon sx={{marginRight: 1}}/>
             <Typography variant="body1" fontSize={'13px'}>Login / Sign Up</Typography>
           </IconButton>
