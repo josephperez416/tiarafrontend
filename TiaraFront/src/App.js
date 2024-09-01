@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import Login from "./pages/Login";
 import SingleServiceDetails from "./pages/singleServiceDetails";
 import ErrorPage from "./pages/ErrorPage";
+import EmailPage from "./pages/EmailPage";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -14,9 +15,8 @@ export default function App() {
       </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/details' element={<SingleServiceDetails />}/>
-      <Route path='/signup' element={<TestPage />}>
-          <Route index element={<div><h2>SignUp</h2></div>} />
-          <Route path='test' element={<div><h2>Test</h2></div>} />
+      <Route path='/signup'>
+          <Route path='email' element={<EmailPage />} />
       </Route>
     </>
     )
@@ -24,15 +24,5 @@ export default function App() {
 
   return (
     <RouterProvider router={router} />
-  );
-}
-
-function TestPage() {
-  return (
-    <div>
-      <h2>TestPage</h2>
-      <Link to="/signup/test">Test</Link>
-      <Outlet /> {/* This is where the signup route will be rendered */}
-    </div>
   );
 }
