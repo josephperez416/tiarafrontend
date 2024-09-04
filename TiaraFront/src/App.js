@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import Login from "./pages/Login";
 import SingleServiceDetails from "./pages/singleServiceDetails";
 import ErrorPage from "./pages/ErrorPage";
+import ClientDashboard from "./pages/ClientDashboard";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export default function App() {
           <Route index element={<div><h2>SignUp</h2></div>} />
           <Route path='test' element={<div><h2>Test</h2></div>} />
       </Route>
+      <Route path='/ClientDashboard' element={<ClientDashboard/>}/>
     </>
     )
   );
