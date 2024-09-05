@@ -4,7 +4,7 @@ import { Facebook, YouTube, Instagram } from '@mui/icons-material';
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: '#932F6D', color: 'white', padding: '30px 20px', fontSize:'11px'}}>
+    <Box sx={{ backgroundColor: '#932F6D', color: 'white', padding: '30px 20px', fontSize:'11px', zIndex: (theme) => theme.zIndex.drawer + 1}}>
       <Container maxWidth='lg'>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'center', md: 'left' } }}>

@@ -37,7 +37,7 @@ export default function Header() {
   };
 
   return (
-    <CustomAppBar position="static">
+    <CustomAppBar position="fixed"  sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar>
         <Title>
         <Logo src="\Tiara_logo.png" alt="Mi Tiara Logo" />
