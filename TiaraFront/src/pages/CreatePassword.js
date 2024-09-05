@@ -9,9 +9,11 @@ const CreatePassword = () =>{
         <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center',
             height: '100vh', backgroundColor: '#f4f4f4', position: 'relative'}}>
             <Card sx={{width: 600, height: 400, padding: 8, borderRadius: 7, boxShadow: 10, display:'flex', flexDirection:'column', justifyContent: 'center', position: 'relative'}}>
-                <ArrowBackIcon sx={{color:'#C13E8F', cursor:'pointer', mb:2}}/>
-                <Box sx={{width: '200px', alignSelf: 'center', marginBottom: '30px'}}>
-                    <LinearProgress variant="determinate" value={66} sx={{height:4, borderRadius: 4, backgroundColor:'rgba(147, 47, 109, 0.6)', '& .MuiLinearProgress-bar':{backgroundColor: '#932F6D'}}}/>
+                <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'30px'}}>
+                    <ArrowBackIcon sx={{color:'#C13E8F', cursor:'pointer'}}/>
+                    <Box sx={{width: '200px', marginRight:'200px'}}>
+                        <LinearProgress variant="determinate" value={66} sx={{height:4, borderRadius: 4, backgroundColor:'rgba(147, 47, 109, 0.6)', '& .MuiLinearProgress-bar':{backgroundColor: '#932F6D'}}}/>
+                    </Box>
                 </Box>
 
                 <CardContent sx={{textAlign:'center', width:'100%', alignSelf:'center'}}>
