@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import { Box, Button, Typography, Modal } from '@mui/material';
 import ImageModal from './ImageModal'; // Import the ImageModal component
+import { ServiceDetailsContext } from './ServiceDetailsProvider';
 
-function DetailsImages({images}) {
+function DetailsImages() {
+
+  const {images, totalPrice} = useContext(ServiceDetailsContext);
+
   const [open, setOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -59,19 +63,28 @@ function DetailsImages({images}) {
       <Box
         sx={{
           border: '1px solid #ccc',
-          height: 155,
-          padding: 2,
-          borderRadius: 3,
-          width: '25%',
-          boxShadow: 3,
+          paddingX: 2,
+          paddingTop: 3.5,
+          paddingBottom: 3,
+          borderRadius: 5,
+          width: '20%',
+          boxShadow: 2,
           display: 'flex',
           flexDirection: 'column',
-          alignContent: 'center'
+          marginLeft: 2
         }}
       >
-        <Typography variant="h4">Price/Rate</Typography>
-        <Typography variant="h5" color="text.secondary">Starting Price</Typography>
-        <Button variant="contained" sx={{ mt: 1, borderRadius: 2 }}>
+        <Typography fontSize={'30px'} >Price/Rate ${totalPrice.toFixed(2)}</Typography>
+        <Typography fontSize={'22px'} color="text.secondary" >Starting Price</Typography>
+        <Button variant="contained" 
+        sx={{ mt: 2, 
+          borderRadius: 3, 
+          backgroundColor: '#932F6D', 
+          padding: '10px 16px',
+          textTransform: 'none',
+          fontSize: '15px',
+          '&:hover': {
+            backgroundColor: '#591C42'}}}>
           Reserve
         </Button>
       </Box>
@@ -82,6 +95,7 @@ function DetailsImages({images}) {
         onClose={handleClose} // Clicking outside should close the modal
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
+        <div>
         <ImageModal
           open={open}
           handleClose={handleClose}
@@ -90,6 +104,7 @@ function DetailsImages({images}) {
           handlePrev={handlePrev}
           handleNext={handleNext}
         />
+        </div>
       </Modal>
     </Box>
   );

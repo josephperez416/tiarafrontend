@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
+import { ServiceDetailsContext } from './ServiceDetailsProvider';
 
-function DetailsCard({ name, cityState, price, rating, imageUrl }){
+function DetailsCard(){
+
+  const {cardDetails} = useContext(ServiceDetailsContext);
+  const {name, cityState, price, rating, imageUrl} = cardDetails;
+
   return (
-    <Card>
+    <Card sx={{ boxShadow:'3', borderRadius:'20px'}}>
       {/* Top half with text and rating */}
-      <CardContent sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <CardContent sx={{ display: 'flex', justifyContent: 'space-between', padding: '30px'}}>
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <Typography variant="h5" component="div">
+          <Typography fontSize={'34px'} fontWeight='bold'>
             {name}
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography fontSize={'25px'} color="text.secondary">
             {cityState}
           </Typography>
-          <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+          <Typography fontSize={'32px'} fontWeight='600'>
             {price}
           </Typography>
         </Box>
         {/* Star icon with rating */}
         <Box sx={{ display: 'flex', alignItems: 'center'}}>
-          <StarIcon sx={{ color: '#FFC107', mr: 0.5, fontSize: 30}}/>
-          <Typography variant="body1" component="div" sx={{fontSize: 30}}>
+          <StarIcon sx={{ color: '#FFC107', mr: 0.5, fontSize: 40}}/>
+          <Typography fontSize={'34px'} fontWeight='bold'>
             {rating}
           </Typography>
         </Box>

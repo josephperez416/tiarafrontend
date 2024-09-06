@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Avatar, Box, Button, Grid, Rating, Typography } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { ServiceDetailsContext } from './ServiceDetailsProvider';
 
 // Review component
 function Review ({ profileImage, rating, name, date, review }) {
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'flex-start', p: 2}}>
       {/* Profile Image */}
@@ -15,12 +17,12 @@ function Review ({ profileImage, rating, name, date, review }) {
         <Rating name='read-only' value={rating} precision={0.5} readOnly />
         
         {/* Name and Date */}
-        <Typography variant='body2' color='text.secondary'>
-          {name} • {'October 1, 2023'}
+        <Typography variant='body1'>
+          {name} • {date}
         </Typography>
         
         {/* Review Text */}
-        <Typography variant="body1" sx={{ mt: 1 }}>
+        <Typography variant='body1' color='text.secondary' sx={{ mt: 1 }}>
           {review}
         </Typography>
       </Box>
@@ -28,70 +30,14 @@ function Review ({ profileImage, rating, name, date, review }) {
   );
 };
 
-// FilteredReviewsList component
-function FilteredReviewsList({ reviews, onClose }) {
-  const [filterRating, setFilterRating] = useState(null);
-
-  const handleFilter = (rating) => {
-    setFilterRating(rating === filterRating ? null : rating);
-  };
-
-  const filteredReviews = filterRating 
-    ? reviews.filter((review) => Math.floor(review.rating) === filterRating)
-    : reviews;
+function ReviewsGrid() {
+  
+  const { reviews } = useContext(ServiceDetailsContext);
 
   return (
-    <Box sx={{ p: 4, border: '1px solid #e0e0e0', borderRadius: 4, mt: 2 }}>
-      {/* Filter Buttons */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-        {[5, 4, 3, 2, 1].map((rating) => (
-          <Button 
-            key={rating}
-            variant={filterRating === rating ? 'contained' : 'outlined'}
-            onClick={() => handleFilter(rating)}
-            sx={{ mx: 1 }}
-          >
-            {rating} Stars
-          </Button>
-        ))}
-      </Box>
-
-      {/* Filtered Reviews */}
-      <Box>
-        {filteredReviews.length > 0 ? (
-          filteredReviews.map((review, index) => (
-            <Box key={index} sx={{ mb: 2 }}>
-              <Review {...review} />
-            </Box>
-          ))
-        ) : (
-          <Typography>No reviews found for the selected filter.</Typography>
-        )}
-      </Box>
-
-      {/* Close Button */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-        <Button variant="outlined" onClick={onClose}>Close</Button>
-      </Box>
-    </Box>
-  );
-};
-
-function ReviewsGrid({ reviews }) {
-  const [showFilteredReviews, setShowFilteredReviews] = useState(false);
-
-  const handleMoreClick = () => {
-    setShowFilteredReviews(true);
-  };
-
-  const handleClose = () => {
-    setShowFilteredReviews(false);
-  };
-
-  return (
-    <Box sx={{ p: 4, border: '1px solid #e0e0e0', borderRadius: 4 }}>
+    <Box sx={{ p: 4, border: '1px solid #e0e0e0', borderRadius: 4, alignContent: 'center' }}>
       {/* Title */}
-      <Typography variant="h5" gutterBottom>
+      <Typography fontSize={'40px'} fontWeight='bold' align='center' sx={{marginBottom: 4}} >
         Reviews
       </Typography>
 
@@ -108,18 +54,20 @@ function ReviewsGrid({ reviews }) {
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
         <Button 
           variant="contained" 
-          color="primary" 
-          endIcon={<ChevronRightIcon />} 
-          onClick={handleMoreClick}
+          sx={{
+            borderRadius: 3, 
+            backgroundColor: '#932F6D', 
+            padding: '7px 20px',
+            textTransform: 'none',
+            fontSize: '15px',
+            '&:hover': {
+              backgroundColor: '#591C42'}
+          }}
+          endIcon={<ChevronRightIcon />}
         >
           More
         </Button>
       </Box>
-
-      {/* Filtered Reviews Component */}
-      {showFilteredReviews && (
-        <FilteredReviewsList reviews={reviews} onClose={handleClose} />
-      )}
     </Box>
   );
 };

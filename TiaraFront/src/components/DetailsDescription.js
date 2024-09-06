@@ -1,42 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
+import ProductList from './ProductList';
+import { ServiceDetailsContext } from './ServiceDetailsProvider';
 
 function DetailsDescription() {
-  const bulletPoints = [
-    'First point from array',
-    'Second point from array',
-    'Third point from array',
-  ];
 
+  const {description, locationHours, productsServices, importantDetails, offeredBy} = useContext(ServiceDetailsContext);
+  
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      {/* Section 1 */}
+      {/* Description */}
       <Box sx={{ paddingBottom: 3 }}>
-        <Typography variant="h3">Description</Typography>
-        <Typography variant="body1">
-          Mariachi San Luis is a vibrant mariachi band known for their energetic performances and colorful costumes,
-           blending traditional Mexican folk music with modern pop influences. 
-           Their lively shows, complete with intricate guitar solos and passionate vocal harmonies,
-            have made them a favorite at festivals and celebrations across the globe.
+        <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Description</Typography>
+        <Typography fontSize={'20px'} color="text.secondary" >
+          {description}
         </Typography>
       </Box>
 
-      {/* Section 2 (with bullet points) */}
+      {/* Location and Hours */}
       <Box sx={{ paddingBottom: 3 }}>
-        <Typography variant="h3">Important Details</Typography>
+        <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Location & Hours</Typography>
         <List>
-          {bulletPoints.map((point, index) => (
+          {locationHours.map((point, index) => (
             <ListItem key={index} disablePadding>
-              <ListItemText primary={point} />
+              <ListItemText primary={point} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
             </ListItem>
           ))}
         </List>
       </Box>
 
-      {/* Section 3 */}
-      <Box>
-        <Typography variant="h3">Extra Details</Typography>
-        <Typography variant="body1">This is the content for section 4.</Typography>
+      {/* Products and Services */}
+      {(productsServices && productsServices.length > 0) && (
+        <Box sx={{ paddingBottom: 3 }}>
+        <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Products and Services</Typography>
+          <ProductList products={productsServices} />
+        </Box>
+      )}
+
+      {/* Important Details */}
+      <Box sx={{ paddingBottom: 3 }}>
+        <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Important Details</Typography>
+        <List>
+          {importantDetails.map((point, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemText primary={point} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+
+      {/* Offered By */}
+      <Box sx={{ paddingBottom: 10 }}>
+        <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Offered By</Typography>
+        <Typography fontSize={'20px'} color="text.secondary">
+          {offeredBy}
+        </Typography>
       </Box>
     </Box>
   );
