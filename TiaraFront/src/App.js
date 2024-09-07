@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import SingleServiceDetails from "./pages/singleServiceDetails";
 import ErrorPage from "./pages/ErrorPage";
 import EmailPage from "./pages/EmailPage";
+import VendorClient from "./pages/VendorClient";
 
 export default function App() {
   const router = createBrowserRouter(
