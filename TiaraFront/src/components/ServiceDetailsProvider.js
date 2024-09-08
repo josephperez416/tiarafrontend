@@ -26,18 +26,24 @@ function ServiceDetailsProvider({ children }) {
     'Their lively shows, complete with intricate guitar solos and passionate vocal harmonies, have made them a' +
     'favorite at festivals and celebrations across the globe.';
   
-  const locationHours = [
-    'Monday: 9am - 5pm',
-    'Tuesday: 9am - 5pm',
-    'Wednesday: 9am - 5pm',
-    'Thursday: 9am - 5pm',
-  ];
+  const locationHours = 
+  {
+    location : '1234 Mariachi Plaza, Los Angeles, CA 90001',
+    hours : [
+      'Monday: 9am - 5pm',
+      'Tuesday: 9am - 5pm',
+      'Wednesday: 9am - 5pm',
+      'Thursday: 9am - 5pm',
+    ]
+  };
   
-  const importantDetails = [
-    'Important detail 1',
-    'Important detail 2',
-    'Important detail 3',
-  ];
+  
+  const importantDetails = 
+  {
+    travel : '0-15 miles',
+    minTime: '3 months',
+    eventSize: '51-150 guests'
+  }
   
   const offeredBy = 'Mariachi San Luis is was started childhood friends and musical prodigies,' + 
     'Carlos "El Maestro" Hernandez and Sofia "La Reina" Morales. ' +

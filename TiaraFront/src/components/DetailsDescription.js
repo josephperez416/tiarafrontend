@@ -21,8 +21,13 @@ function DetailsDescription() {
       <Box sx={{ paddingBottom: 3 }}>
         <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Location & Hours</Typography>
         <List>
-          {locationHours.map((point, index) => (
-            <ListItem key={index} disablePadding>
+          <Typography fontSize={'25px'} fontWeight='bold'>Location: </Typography>
+          <ListItem>
+            <ListItemText primary={locationHours.location} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
+          </ListItem>
+          <Typography fontSize={'25px'} fontWeight='bold'>Hours: </Typography>
+          {locationHours.hours.map((point, index) => (
+            <ListItem key={index} >
               <ListItemText primary={point} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
             </ListItem>
           ))}
@@ -30,7 +35,7 @@ function DetailsDescription() {
       </Box>
 
       {/* Products and Services */}
-      {(productsServices && productsServices.length > 0) && (
+      {(productsServices && productsServices.length > 1) && (
         <Box sx={{ paddingBottom: 3 }}>
         <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Products and Services</Typography>
           <ProductList products={productsServices} />
@@ -41,11 +46,15 @@ function DetailsDescription() {
       <Box sx={{ paddingBottom: 3 }}>
         <Typography fontSize={'35px'} fontWeight='bold' gutterBottom>Important Details</Typography>
         <List>
-          {importantDetails.map((point, index) => (
-            <ListItem key={index} disablePadding>
-              <ListItemText primary={point} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
-            </ListItem>
-          ))}
+          <ListItem disablePadding>
+            <ListItemText primary={'Willing to Travel: ' + importantDetails.travel} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemText primary={'Clients Must Book: ' + importantDetails.minTime + ' in advance'} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemText primary={'Max Event Size: ' + importantDetails.eventSize} primaryTypographyProps={{fontSize:'20px', color:'text.secondary'}}/>
+          </ListItem>
         </List>
       </Box>
 
