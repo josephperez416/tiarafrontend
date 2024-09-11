@@ -21,11 +21,11 @@ const EmailPage = () =>{
             height: '100vh', backgroundColor: '#f4f4f4', position: 'relative'}}>
                 <Card sx={{width: 600, height: 400, padding: 8, borderRadius: 7, boxShadow: 10, display:'flex', flexDirection:'column', justifyContent: 'center', position: 'relative'}}>
                     <Box sx={{width: '200px', alignSelf: 'center', marginBottom: '30px'}}>
-                        <LinearProgress variant="determinate" value={20} sx={{height:4, borderRadius: 4, backgroundColor:'rgba(147, 47, 109, 0.6)', '& .MuiLinearProgress-bar':{backgroundColor: '#932F6D'}}}/>
+                        <LinearProgress variant="determinate" value={30} sx={{height:4, borderRadius: 4, backgroundColor:'rgba(147, 47, 109, 0.6)', '& .MuiLinearProgress-bar':{backgroundColor: '#932F6D'}}}/>
                     </Box>
                     <CardContent sx={{textAlign:'center', width:'100%', alignSelf:'center'}}>
                         <Typography fontSize={'34px'} fontWeight="bold" gutterBottom>Continue with email</Typography>
-                        <TextField fullWidth label="Email address" variant="outlined" margin="normal" sx={{'& .MuiOutlinedInput-root': {'& fieldset':{borderColor: '#591C42'}, 
+                        <TextField fullWidth label="Email address" variant="outlined" margin="normal" sx={{'& .MuiOutlinedInput-root': {'& fieldset':{borderColor: '#591C42', borderWidth:2, borderRadius:"12px"}, 
                             '&:hover fieldset':{borderColor: '#E09EC7'}, 
                             '&.Mui-focused fieldset':{borderColor: '#E09EC7'},}, 
                             '& .MuiInputLabel-root':{color:'#591C42'}, 
