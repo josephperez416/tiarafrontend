@@ -9,12 +9,13 @@ const AboutYou = () =>{
             backgroundColor:'#f4f4f4'}}>
                 <Card sx={{width:600, padding:4, borderRadius: 7, boxShadow:10}}>
                     <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'20px'}}>
-                    <IconButton sx={{color: "#C13E8F", transition: "box-shadow 0.3s ease, transform 0.3s ease", "&:hover": {boxShadow: "0 0 0 10px rgba(193, 62, 143, 0.2)", transform: "scale(1)" }}}>
-                        <ArrowBackIcon/>
+                        <IconButton sx={{color: "#C13E8F", transition: "box-shadow 0.3s ease, transform 0.3s ease", "&:hover": {boxShadow: "0 0 0 10px rgba(193, 62, 143, 0.2)", transform: "scale(1)" }}}>
+                            <ArrowBackIcon/>
+                        </IconButton>
 
-                    </IconButton>
                         <Box sx={{width:'200px', marginRight:'200px'}}>
-                            <LinearProgress variant="determinate" value={100} sx={{height:4, borderRadius:4, backgroundColor:'rgba(147, 47, 109, 0.6)', '& .MuiLinearProgress-bar':{backgroundColor: '#932F6D'}}}/>
+                            <LinearProgress variant="determinate" value={100} sx={{height:4, borderRadius:4, backgroundColor:'rgba(147, 47, 109, 0.6)', '& .MuiLinearProgress-bar':{backgroundColor: "transparent"}, 
+                            "&::before":{content:'""', position: "absolute", top:0, right:0, height:"100%", width:"50%", backgroundColor:"#932F6D", borderRadius:"0 4px 4px 0"}}}/>
                         </Box>
                     </Box>
 
@@ -22,42 +23,42 @@ const AboutYou = () =>{
                         <Typography fontSize={'24px'} fontWeight="bold" gutterBottom>About You</Typography>
                     </CardContent>
 
-                    <Box sx={{marginBottom: 2}}>
+                    <Box sx={{marginBottom: 2,  paddingLeft:2, paddingRight:2}}>
                         <Box sx={{display:'flex', gap:2, marginBottom:2}}>
                             <TextField fullWidth label = {<span>Full name</span>} variant = "outlined"
-                            sx={{'& label.Mui-focused': {color: '#932F6D',}, '& .MuiOutlinedInput-root': {
-                                    '& fieldset': {borderColor: '#932F6D'},
+                            sx={{'& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
                                     '&:hover fieldset': {borderColor: '#E09EC7'},
                                     '&.Mui-focused fieldset': {borderColor: '#932F6D'}}
                                 }}/>
     
                             <TextField fullWidth label = {<span>Email address<span style={{color:'red'}}>*</span></span>} variant = "outlined"
-                                sx={{'& label.Mui-focused': {color: '#932F6D',}, '& .MuiOutlinedInput-root': {
-                                    '& fieldset': {borderColor: '#932F6D'},
+                                sx={{'& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
                                     '&:hover fieldset': {borderColor: '#E09EC7'},
                                     '&.Mui-focused fieldset': {borderColor: '#932F6D'}}
                                 }}/>
                         </Box>
 
                         <TextField fullWidth label= {<span>Phone Number<span style={{color:'red'}}>*</span></span>} variant="outlined"
-                            sx={{marginBottom:2, '& label.Mui-focused': {color: '#932F6D',}, '& .MuiOutlinedInput-root': {
-                                    '& fieldset': {borderColor: '#932F6D'},
+                            sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
                                     '&:hover fieldset': {borderColor: '#E09EC7'},
                                     '&.Mui-focused fieldset': {borderColor: '#932F6D'}}
                             }}
                         />
 
                         <TextField fullWidth label={<span>Username<span style={{color:'red'}}>*</span></span>} variant="outlined"
-                            sx={{marginBottom:2, '& label.Mui-focused': {color: '#932F6D',}, '& .MuiOutlinedInput-root': {
-                                    '& fieldset': {borderColor: '#932F6D'},
+                            sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
                                     '&:hover fieldset': {borderColor: '#E09EC7'},
                                     '&.Mui-focused fieldset': {borderColor: '#932F6D'}}
                             }}
                         />
 
                         <TextField fullWidth label={<span>Bio<span style={{color:'red'}}>*</span></span>} variant="outlined" multiline
-                            sx={{marginBottom:2, '& label.Mui-focused': {color: '#932F6D',}, '& .MuiOutlinedInput-root': {
-                                    '& fieldset': {borderColor: '#932F6D'},
+                            sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
                                     '&:hover fieldset': {borderColor: '#E09EC7'},
                                     '&.Mui-focused fieldset': {borderColor: '#932F6D'}}
                             }}
