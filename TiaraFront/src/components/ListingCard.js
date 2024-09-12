@@ -18,7 +18,7 @@ function ListingCard(props) {
   const { image, title, location, rating, price } = props;
 
   return (
-    <Card sx={{ width: '20%', margin: 1, boxShadow: 3, borderRadius: 2, alignSelf: 'auto'}}>
+    <Card sx={{ margin: 1, boxShadow: 3, borderRadius: 2, alignSelf: 'auto'}}>
       <CardMedia
         component="img"
         height="250"
