@@ -69,6 +69,7 @@ const LocationCard = () =>{
                             }}
                         />
 
+                        <Box sx={{display:'flex', justifyContent:'flex-end', marginTop:'20px'}}>
                             <Button variant="contained" endIcon= {<ArrowForwardIcon/>} sx={{backgroundColor:'#932F6D', borderRadius:2, '&:hover':{backgroundColor: '#591C42'}}}>
                                 Next
                             </Button>
