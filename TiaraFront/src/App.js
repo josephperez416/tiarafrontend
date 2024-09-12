@@ -4,14 +4,14 @@ import Login from "./pages/Login";
 import SingleServiceDetails from "./pages/singleServiceDetails";
 import ErrorPage from "./pages/ErrorPage";
 import EmailPage from "./pages/EmailPage";
+import FullListingsPage from "./pages/FullListingsPage";
 
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
     <>
       <Route path='/' element={<Main />} errorElement={<ErrorPage />}>
-          <Route index element={<div><h2>Main</h2></div>} />
-          <Route path='test' element={<div><h2>Test</h2></div>} />
+          <Route index element={<FullListingsPage />} />
       </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/details' element={<SingleServiceDetails />}/>
