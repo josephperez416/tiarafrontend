@@ -6,6 +6,7 @@ import ErrorPage from "./pages/ErrorPage";
 import EmailPage from "./pages/EmailPage";
 import FullListingsPage from "./pages/FullListingsPage";
 import CreatePassword from "./pages/CreatePassword";
+import AboutYou from "./pages/AboutYou";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -19,6 +20,7 @@ export default function App() {
       <Route path='/signup'>
           <Route path='email' element={<EmailPage />} />
           <Route path='password' element={<CreatePassword />} />
+          <Route path='about' element={<AboutYou />} />
       </Route>
     </>
     )

@@ -56,7 +56,7 @@ const AboutYou = () =>{
                             }}
                         />
 
-                        <TextField fullWidth label={<span>Bio<span style={{color:'red'}}>*</span></span>} variant="outlined" multiline
+                        <TextField fullWidth label={<span>Bio<span style={{color:'red'}}>*</span></span>} variant="outlined" multiline rows={5}
                             sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
                                     '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
                                     '&:hover fieldset': {borderColor: '#E09EC7'},
