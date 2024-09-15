@@ -24,7 +24,6 @@ const LocationCard = () =>{
                     </CardContent>
 
                     <Box sx={{marginBottom: 2,  paddingLeft:2, paddingRight:2}}>
-                        <Typography fontSize={'20px'} fontWeight="bold" marginBottom={'10px'}>Address</Typography>
                         <TextField fullWidth label= {<span>Address<span style={{color:'red'}}>*</span></span>} variant="outlined"
                             sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
                                     '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
@@ -33,7 +32,6 @@ const LocationCard = () =>{
                             }}
                         />
 
-                        <Typography fontSize={'20px'} fontWeight="bold" marginBottom={'10px'}>Address 2 (Optional)</Typography>
                         <TextField fullWidth label={<span>Address 2</span>} variant="outlined"
                             sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
                                     '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
@@ -42,7 +40,6 @@ const LocationCard = () =>{
                             }}
                         />
 
-                        <Typography fontsize={'20px'} fontWeight="bold" marginBottom={'10px'}>City</Typography>
                         <TextField fullWidth label={<span>City<span style={{color:'red'}}>*</span></span>} variant="outlined" multiline
                             sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
                                     '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
@@ -51,7 +48,6 @@ const LocationCard = () =>{
                             }}
                         />
 
-                        <Typography fontsize={'20px'} fontWeight="bold" marginBottom={'10px'}>State</Typography>
                         <TextField fullWidth label={<span>State<span style={{color:'red'}}>*</span></span>} variant="outlined" multiline
                             sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
                                     '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
@@ -60,7 +56,6 @@ const LocationCard = () =>{
                             }}
                         />
 
-                        <Typography fontsize={'20px'} fontWeight="bold" marginBottom={'10px'}>Zip</Typography>
                         <TextField fullWidth label={<span>Zip<span style={{color:'red'}}>*</span></span>} variant="outlined" multiline
                             sx={{marginBottom:2, '& label.Mui-focused': {color: '#591C42'}, '& .MuiOutlinedInput-root': {
                                     '& fieldset': {borderColor: '#591C42', borderWidth:2, borderRadius:'12px'},
