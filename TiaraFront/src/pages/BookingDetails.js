@@ -72,7 +72,8 @@ const BookingDetails = () =>{
                                 "& .MuiPickersDay-root": {
                                   "&.Mui-selected": {
                                     backgroundColor: '#932F6D',
-                                  },
+                                    color: "#fff",
+                                },
                               },
                             }}
                           }}
@@ -92,8 +93,12 @@ const BookingDetails = () =>{
                                 '& .MuiMenuItem-root': {
                                   '&.Mui-selected': {
                                     backgroundColor: '#932F6D',
+                                    color: "#fff",
+                                    '&:hover': {
+                                    backgroundColor: '#591C42',
                                     color: "#fff"
-                                  }
+                                    }
+                                  },
                                 },
                                 "& .MuiDialogActions-root .MuiButton-text": {
                                     color: '#932F6D'
@@ -116,8 +121,12 @@ const BookingDetails = () =>{
                               '& .MuiMenuItem-root': {
                                 '&.Mui-selected': {
                                   backgroundColor: '#932F6D',
-                                  color: "#fff"
-                                }
+                                  color: "#fff",
+                                  '&:hover': {
+                                    backgroundColor: '#591C42',
+                                    color: "#fff"
+                                    }
+                                },
                               },
                               "& .MuiDialogActions-root .MuiButton-text": {
                                   color: '#932F6D'
