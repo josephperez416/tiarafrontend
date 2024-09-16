@@ -8,6 +8,8 @@ import FullListingsPage from "./pages/FullListingsPage";
 import CreatePassword from "./pages/CreatePassword";
 import AboutYou from "./pages/AboutYou";
 import LocationCard from "./pages/LocationCard";
+import BookingDetails from "./pages/BookingDetails";
+import BookingDateTime from "./pages/BookingDateTime";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -15,9 +17,14 @@ export default function App() {
     <>
       <Route path='/' element={<Main />} errorElement={<ErrorPage />}>
           <Route index element={<FullListingsPage />} />
+          <Route path='/booking'>
+            <Route path='details' element={<BookingDetails />} />
+            <Route path='datetime' element={<BookingDateTime />} />
+          </Route>
       </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/details' element={<SingleServiceDetails />}/>
+      <Route path='/confirmation' />
       <Route path='/signup'>
           <Route path='email' element={<EmailPage />} />
           <Route path='password' element={<CreatePassword />} />
