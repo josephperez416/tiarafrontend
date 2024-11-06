@@ -2,14 +2,8 @@ import { Box, Pagination, Typography } from "@mui/material";
 import ListingsContainer from "../components/ListingContainer";
 
 const listings = [
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"},
-  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", price:"$800 / Day"}
+  {image: "https://media.self.com/photos/5e70f72443731c000882cfe7/4:3/w_2560%2Cc_limit/GettyImages-125112134.jpg", title:"Mariachi San Luis", location:"San Luis Obispo, CA", rating:"4.9", fees:[["Tables", "Chairs", "Dj", "Food", "Tables", "Chairs", "Dj", "Food", "Tables", "Chairs", "Dj", "Food", "hello", 'world'], [100, 200, 1000, 3000, 100, 200, 1000, 3000, 100, 200, 1000, 3000, 1000]]},
+  
 ];
 
 function FullListingsPage() {
