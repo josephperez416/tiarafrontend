@@ -8,6 +8,7 @@ import FullListingsPage from "./pages/FullListingsPage";
 import CreatePassword from "./pages/CreatePassword";
 import AboutYou from "./pages/AboutYou";
 import LocationCard from "./pages/LocationCard";
+import DetailsCard from "./components/DetailsCard";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -29,6 +30,7 @@ export default function App() {
   );
 
   return (
-    <RouterProvider router={router} />
+    // <RouterProvider router={router} />
+    <AboutYou/>
   );
 }
