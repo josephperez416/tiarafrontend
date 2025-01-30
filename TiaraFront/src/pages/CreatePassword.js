@@ -4,13 +4,15 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import {useNavigate} from 'react-router-dom';
 
 const CreatePassword = () =>{
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+
     return(
         <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center',
             height: '100vh', backgroundColor: '#f4f4f4', position: 'relative'}}>
             <Card sx={{width: 600, height: 400, padding: 8, borderRadius: 7, boxShadow: 10, display:'flex', flexDirection:'column', justifyContent: 'center', position: 'relative'}}>
                 <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'30px'}}>
-                    <IconButton sx={{color: "#C13E8F", transition: "box-shadow 0.3s ease, transform 0.3s ease", "&:hover": {boxShadow: "0 0 0 10px rgba(193, 62, 143, 0.2)", transform: "scale(1)" }}}>
+                    <IconButton sx={{color: "#C13E8F", transition: "box-shadow 0.3s ease, transform 0.3s ease", "&:hover": {boxShadow: "0 0 0 10px rgba(193, 62, 143, 0.2)", transform: "scale(1)" }}}
+                        onClick={() => navigate("/signup/email")}>
                         <ArrowBackIcon sx={{color:'#C13E8F', cursor:'pointer'}}/>
                     </IconButton>
                     <Box sx={{width: '200px', marginRight:'200px'}}>
@@ -36,7 +38,8 @@ const CreatePassword = () =>{
                             '&.Mui-focused fieldset': {borderColor: '#932F6D'}}
                         }}/>
                     
-                    <Button fullWidth variant="contained" color="primary" sx={{marginTop:2, borderRadius:2, textAlign:'center', display:'block', backgroundColor: '#932F6D', '&:hover':{backgroundColor: '#591C42'}}}>
+                    <Button fullWidth variant="contained" color="primary" sx={{marginTop:2, borderRadius:2, textAlign:'center', display:'block', backgroundColor: '#932F6D', '&:hover':{backgroundColor: '#591C42'}}}
+                        onClick={() => navigate("/signup/about")}>
                         Sign In
                     </Button>
                 </Box>
