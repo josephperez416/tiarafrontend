@@ -1,8 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Box, Card, CardContent, TextField, Button, Typography, Link, LinearProgress} from '@mui/material';
 import {styled} from '@mui/system';
 import LanguageIcon from '@mui/icons-material/Language';
-import { BorderColor } from '@mui/icons-material';
 
 
 const LanguageSelector = styled(Box)(({theme}) => ({
@@ -16,6 +16,8 @@ const LanguageSelector = styled(Box)(({theme}) => ({
 }));
 
 const EmailPage = () =>{
+    const navigate = useNavigate();
+
     return(
         <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center',
             height: '100vh', backgroundColor: '#f4f4f4', position: 'relative'}}>
@@ -35,7 +37,7 @@ const EmailPage = () =>{
                             and accept our <Link href="#" color="#28202899">Terms and Conditions</Link> and <Link href="#" color="#28202899">Privacy Policy</Link>.
                         </Typography>
                         <Button width="100px" variant="contained" color="primary" sx={{marginTop:2, backgroundColor: '#932F6D', borderRadius: 2, textAlign:'left', display:'block', marginTop: 2, '&:hover': {
-                                backgroundColor: '#591C42'}}}>
+                                backgroundColor: '#591C42'}}} onClick={() => navigate("/signup/password")}>
                             Continue
                         </Button>
                     </CardContent>

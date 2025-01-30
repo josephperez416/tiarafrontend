@@ -2,8 +2,11 @@ import React from "react";
 import {Box, Card, CardContent, TextField, Button, Typography, LinearProgress, Checkbox, FormControlLabel, IconButton} from '@mui/material';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
 const AboutYou = () =>{
+    const navigate = useNavigate();
+
     return(
         <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', height:'100vh',
             backgroundColor:'#f4f4f4'}}>
@@ -11,7 +14,8 @@ const AboutYou = () =>{
                     '@media (max-width:600px)': {padding:2}}}>
 
                     <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-between', margin: '10px'}}>
-                        <IconButton sx={{color: "#C13E8F", transition: "box-shadow 0.3s ease, transform 0.3s ease", "&:hover": {boxShadow: "0 0 0 10px rgba(193, 62, 143, 0.2)", transform: "scale(1)" }}}>
+                        <IconButton sx={{color: "#C13E8F", transition: "box-shadow 0.3s ease, transform 0.3s ease", "&:hover": {boxShadow: "0 0 0 10px rgba(193, 62, 143, 0.2)", transform: "scale(1)" }}}
+                            onClick={() => navigate("/signup/password")}>
                             <ArrowBackIcon/>
                         </IconButton>
 
@@ -67,7 +71,8 @@ const AboutYou = () =>{
                         />
 
                         <Box sx={{display:'flex', justifyContent:'flex-end', marginTop:'10px'}}>
-                            <Button variant="contained" endIcon= {<ArrowForwardIcon/>} sx={{backgroundColor:'#932F6D', borderRadius:2, '&:hover':{backgroundColor: '#591C42'}}}>
+                            <Button variant="contained" endIcon= {<ArrowForwardIcon/>} sx={{backgroundColor:'#932F6D', borderRadius:2, '&:hover':{backgroundColor: '#591C42'}}}
+                            onClick={() => navigate("/signup/location")}>
                                 Next
                             </Button>
                         </Box>
