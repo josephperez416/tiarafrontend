@@ -65,4 +65,14 @@ const ProductServices = () => {
                         Add
                     </Button>
 
+                    <Button variant="contained" endIcon={<ArrowForwardIcon/>} sx={{backgroundColor:"#932F6D", color:"#FFF", "&hover":{backgroundColor: "#591C42"}}}
+                        onClick={() => navigate("/ErrorPage")}>
+                        Next
+                    </Button>
+                </Box>
+            </Card>
+        </Box>
+    )
+}
+
 export default ProductServices;
