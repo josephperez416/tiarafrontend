@@ -1,4 +1,5 @@
 import { Login } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Checkbox,
@@ -39,6 +40,7 @@ const theme = createTheme({
 });
 
 function LoginForm() {
+  const navigate = useNavigate();
   return (
     <ThemeProvider theme={theme}>
       <div
@@ -95,23 +97,14 @@ function LoginForm() {
               marginTop: "8px",
             }}
           >
-            <Button
-              variant="outlined"
-              sx={{ textTransform: "none", flexGrow: 1, borderRadius: "10px" }}
-            >
+            <Button variant="contained" sx={{textTransform: "none", flexGrow: 1, marginRight: "10px",
+                borderRadius: "10px"}}
+              disableElevation
+              onClick={() => navigate("/signup/email")}>
               Sign Up
             </Button>
-            <Button
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                flexGrow: 5,
-                marginLeft: 2,
-                borderRadius: "10px",
-              }}
-              disableElevation
-            >
-              Login In {">"}
+            <Button variant="outlined" sx={{ textTransform: "none", flexGrow: 1, borderRadius: "10px" }}>
+              Login In
             </Button>
           </div>
         </FormGroup>
