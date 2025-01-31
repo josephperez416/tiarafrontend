@@ -12,6 +12,7 @@ import BusinessHrs from "./pages/BusinessHrsCard";
 import ProductServices from "./pages/ProductServices";
 import SignupLayout from "./components/SignupLayout";
 // import Showcase from "./pages/Showcase";
+import VendorClient from "./pages/VendorClient";
 
 export default function App() {
   const router = createBrowserRouter(
